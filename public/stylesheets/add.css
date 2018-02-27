@@ -1,0 +1,22 @@
+*{margin: 0;padding: 0;}
+li{
+	list-style: none;
+}
+header{
+	height: 75px;
+	background: url(../images/topLogo.png) no-repeat;
+	background-color: #000;
+	padding-left:30px ;
+}
+.collapse{
+	border-collapse: collapse;
+}
+.lis{
+	width: 130px;
+	height: 45px;
+	border: 1px solid #7f7f7f;
+	background: #454545;
+	color: #fff;
+	text-align: center;
+	line-height: 45px;
+}
