@@ -1,0 +1,41 @@
+article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary{
+	 display: block;
+	 }
+body,h1,h2,h3,h4,h5,h6,p,a,input,img,ul,li,ol,dl,dt,dd{padding:0;margin:0;}
+ul,ol{list-style:none;}
+img{display:block;border:0;}
+input{outline:none;}
+header,footer,section,nav{display:block;}
+/*body{font-size:0.12rem;font-family:"微软雅黑";color:#3e3e3e;}*/
+a{text-decoration:none;}
+*{box-sizing:content-box;}
+html,body{height:100%;}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+
+body{
+	min-width: 800px;
+	height: 100%;
+	background: url(../images/ecshop-bg.png) no-repeat;
+	background-size: cover;
+	color: #FFFFFF;
+}
+header{
+	height: 200px;
+	/*background:url(../images/topLogo.png) no-repeat;*/
+}
+header>img{
+	padding: 50px;
+}
+nav{
+	height: 100px;
+}
+nav>img{
+	height: 70px;
+	width: 250px;
+	margin: 0 auto;
+}

@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var login = require('./routes/login');
 var users = require('./routes/users');
 var add = require('./routes/add');
 var list = require('./routes/list');
@@ -24,7 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', add);
+app.use('/', login);
+app.use('/add', add);
 app.use('/users', users);
 app.use('/list', list);
 
