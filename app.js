@@ -6,12 +6,19 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var login = require('./routes/login');
 var users = require('./routes/users');
-var add = require('./routes/add');
-var list = require('./routes/list');
+
+//验证是否登录
+var session = require("express-session");    
+
+var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
+
+var mongoose = require('mongoose');
+// 一定要首先先启动数据库
+mongoose.connect('mongodb://localhost/h51725');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,10 +32,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', login);
-app.use('/add', add);
+app.use('/', index);
 app.use('/users', users);
-app.use('/list', list);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

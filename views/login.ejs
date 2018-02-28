@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="/stylesheets/login.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<title>登陆</title>
 </head>
 <body>
@@ -12,5 +13,86 @@
 	<nav>
 		<img src="/images/ecshop-logo.png"/>
 	</nav>
+	<footer>
+		<div id="form_content">
+			<div class="position_parent">
+				<i class="iconfont">&#xe801;</i>
+				<input type="text" name="" id="username" value="" placeholder="用户名"/>
+			</div>
+			
+			<div class="position_parent">
+				<i class="iconfont">&#xe603;</i>
+				<input type="password" name="" id="psw" value="" placeholder="密码"/>
+			</div>
+			
+			<div class="position_parent yzm">
+				<i class="iconfont">&#xe60e;</i>
+				<input type="text" name=""  value="" placeholder="验证码" />
+				<span id="verificationGode"></span>
+			</div>
+			
+			<input type="button" name="obtn" id="obtn" value="登录" onclick="login()" />
+			
+			<div id="xinx">
+				<input type="checkbox" name="" id="save" /><label for="save">保存登录信息</label>
+				<a href="javascripts:;">忘记密码</a>
+				<a href="javascripts:;">去店铺首页>></a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
+<script>
+	function fn(){
+			var str = "abcdefghijkmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ23456789";
+			var l = str.length;
+			var l1 = parseInt(Math.random()*l);
+			var l2 = parseInt(Math.random()*l);
+			var l3 = parseInt(Math.random()*l);
+			var l4 = parseInt(Math.random()*l);
+			var x = str[l1]+str[l2]+str[l3]+str[l4]
+			return x	
+		}
+		$("#verificationGode").html(fn() ) ; 
+		$("#verificationGode").click(function (){
+			$("#verificationGode").html(fn() ) ; 
+		});
+		$("#verification").blur(function (){
+			if($("#verificationGode").html().toLowerCase() == $(this).val().toLowerCase()){  
+				flagName = true;
+			}else{
+				$("#verificationGode").html(fn() ) ; 
+				flagName = false;
+			}
+		})
+	function login() {
+		$.ajax({
+			url: "/api/login",
+			type: "post",
+			data: {
+				username: $("#username").val(),
+				psw: $("#psw").val()
+			},
+			success: function(res) {
+				console.log(res);
+			}
+		})
+	}
+	function login() {
+		$.ajax({
+			url: "/shops/api/login",
+			type: "post",
+			data: {
+				username: $("#username").val(),
+				psw: $("#psw").val()
+			},
+			success: function(res) {
+				console.log(res);
+				if(res.status==1){
+					location.href="http://localhost:8080/shops/admin"
+				}
+				
+			}
+		})
+	}
+</script>
