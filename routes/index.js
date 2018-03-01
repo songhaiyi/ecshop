@@ -15,6 +15,18 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: '登陆' });
 });
 
+router.get('/admin', function(req, res, next) {
+	
+	// 检查用户是否登录
+	if(req.session && req.session.username != null) {
+		res.render('index', { title: 'ECSHOP 管理中心' });
+	} else {
+		// 重定向
+		res.redirect('/login');
+	}
+	
+});
+
 router.post("/api/login", function(req, res) {
 	var username = req.body.username;
 	var psw = md5(req.body.psw);

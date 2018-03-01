@@ -65,7 +65,7 @@
 				flagName = false;
 			}
 		})
-	/*function login() {
+	function login() {
 		$.ajax({
 			url: "/api/login",
 			type: "post",
@@ -75,24 +75,10 @@
 			},
 			success: function(res) {
 				console.log(res);
+				if(res.status==1){
+					location.href="http://localhost:8080/index/admin"
+				}
 			}
 		})
 	}
-	function login() {
-		$.ajax({
-			url: "/shops/api/login",
-			type: "post",
-			data: {
-				username: $("#username").val(),
-				psw: $("#psw").val()
-			},
-			success: function(res) {
-				console.log(res);
-				if(res.status==1){
-					location.href="http://localhost:8080/shops/admin"
-				}
-				
-			}
-		})
-	}*/
 </script>
