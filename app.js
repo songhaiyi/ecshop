@@ -9,16 +9,16 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 //验证是否登录
-var session = require("express-session");    
+/*var session = require("express-session");    
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/users');*/
 
 var app = express();
 
-var mongoose = require('mongoose');
+/*var mongoose = require('mongoose');
 // 一定要首先先启动数据库
-mongoose.connect('mongodb://localhost/h51725');
+mongoose.connect('mongodb://localhost/h51725');*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
