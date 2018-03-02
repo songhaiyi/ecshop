@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="/stylesheets/login.css" />
+	<link rel='stylesheet' href='stylesheets/common.css' />
+	<link rel="stylesheet" href="/stylesheets/login.css" />	
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<title>登陆</title>
 </head>
@@ -67,16 +68,18 @@
 		})
 	function login() {
 		$.ajax({
-			url: "/api/login",
-			type: "post",
-			data: {
-				username: $("#username").val(),
-				psw: $("#psw").val()
+			type:"post",
+			url:"/api/login",
+			data:{
+				username:$("#username").val(),
+				psw:$("#psw").val()
 			},
-			success: function(res) {
-				console.log(res);
-				if(res.status==1){
-					location.href="http://localhost:8080/index/admin"
+			success:function(res){
+				if( res.status == 1 ){
+					/*登录成功后跳转到后台主页*/
+					location.href = "index";
+				}else{
+					alert( res.message );
 				}
 			}
 		})
