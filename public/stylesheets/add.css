@@ -1,34 +1,205 @@
-article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary{
-	 display: block;
-	 }
-body,h1,h2,h3,h4,h5,h6,p,a,input,img,ul,li,ol,dl,dt,dd{padding:0;margin:0;}
-ul,ol{list-style:none;}
-img{display:block;border:0;}
-input{outline:none;}
-header,footer,section,nav{display:block;}
-/*body{font-size:0.12rem;font-family:"微软雅黑";color:#3e3e3e;}*/
-a{text-decoration:none;}
-*{box-sizing:content-box;}
-html,body{height:100%;}
-.left{
-	float: left;
+body{
+    background: url(../images/body_bj.jpg);
+    padding: 10px;
+    min-width: 773px;
 }
-.right{
-	float: right;
+h1{
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    font-weight: normal;
+    padding: 7px 10px;
+    margin: 0 0 10px 0;
+    overflow: hidden;
 }
-@font-face {
-  font-family: 'iconfont';
-  src: url('/font/iconfont.eot');
-  src: url('/font/iconfont.eot?#iefix') format('embedded-opentype'),
-  url('/font/iconfont.woff') format('woff'),
-  url('/font/iconfont.ttf') format('truetype'),
-  url('/font/iconfont.svg#iconfont') format('svg');
+h1>.span1,h1>.span2{
+    color: #4c4c4c;
+    font-size: 18px;
+    font-weight: normal;
+}
+h1>.span1>a:hover{
+	color: #eb8a3d;
+	text-decoration: underline;
+}
+h1>.span3{
+    display: inline-block;
+    margin: -6px 0 0 10px;
+}
+h1>.span4>a{
+	display: block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px 0;
+    background: #c43926;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+}
+h1>.span4>a:hover{
+    background-color: #ca4d3c;
 }
 
-.iconfont{
-  font-family:"iconfont" !important;
-  font-size:16px;font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
+#main{
+    background: #f3f3f3;
+    border: 1px solid #d7d7d7;
+    margin: 0 0 10px 0;
+    padding: 1px;
 }
+#bar{
+    background: #efefef;
+    padding-left: 10px;
+    height: 39px;
+}
+#bar p>span{
+	float: left;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #787878;
+    line-height: 39px;
+    cursor: pointer;
+}
+#bar p>span.active{
+    background: #fefefe;
+    height: 39px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #192E32;
+}
+
+
+#form{
+    padding: 10px;
+    background: #fefefe;
+}
+#form table{
+	display: none;
+}
+#form table.tableOn{
+	display: block;
+}
+
+/*通用信息开始*/
+#form table{
+	width: 62%;
+	margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+#form table td{
+	padding: 5px 0;
+}
+#form table .label{
+    text-align: right;
+    font-weight: bold;
+    width: 30%;
+    padding: 5px 1em;
+    line-height: 30px;
+    vertical-align: top;
+}
+#form table input{
+	outline: 0;
+	height: 16px;
+	padding: 1px 0;
+}
+#form table select{
+	height: 22px;
+}
+#form table select.style{
+	height: 20px;
+	margin: 1px 8px;
+}
+#form table .xing{
+	margin-left: 8px;
+	font-size: 18px;
+	color: #f00;
+}
+#form table .notice{
+	display: none;
+	color: #666;
+}
+#form table .tianjia{
+    margin: 0 5px;
+    padding: 1px 5px;
+    border: 1px solid #91C4D0;
+    border-right: 2px solid #278296;
+    border-bottom: 2px solid #278296;
+    background: #DDEEF2;
+    font-weight: 400;
+}
+#form .btn{
+	padding: 5px 15px;
+    margin: 2px 2px;
+    border: none;
+    background: #ff3f3f;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: 0;
+}
+#form table .price_btn{
+	height: 22px;
+	margin: 0 8px;
+}
+#form table .w58{
+	width: 58px;
+	margin: 0 4px;
+}
+#form table .w88{
+	width: 88px;
+}
+#form table .cuxiao{
+	border: 1px solid #ccc;
+	height: 18px;
+	background-color: #EBEBE4;
+}
+#form table .picFile{
+	height: 20px;
+	margin-bottom: 8px;
+}
+#form table .picUrl{
+	width: 267px;
+}
+#form table .ck{
+	line-height: 32px;
+}
+#form table .ck>input{
+	margin: 9px 7px 0 0;
+}
+/*通用信息结束*/
+
+/*详细描述开始*/
+#detail{
+	width: 720px;
+	height: 300px;
+}
+/*详细描述结束*/
+
+/*其他信息开始*/
+#form table .lab{
+	margin-right: 12px;
+}
+/*其他信息结束*/
+
+#subBtn{
+	text-align: center;
+	padding: 3px 0;
+}
+
+#footer{
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    color: #9CACAF;
+    text-align: center;
+}
+
+
+
+
+
+
+
