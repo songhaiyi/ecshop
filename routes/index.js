@@ -17,7 +17,10 @@ router.get('/list', function(req, res, next) {
 router.get('/', function(req, res, next) {
   res.render('login', { title: '登陆' });
 });
-
+/*后台主页面主要内容区*/
+router.get('/content', function(req, res, next) {
+  res.render('content', {});
+});
 
 /*登陆*/
 router.post('/api/login', function(req, res){

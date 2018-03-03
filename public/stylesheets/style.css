@@ -1,5 +1,7 @@
 html,body{
 	color: #192E32;
+	height: 100%;
+	overflow: hidden;
 }
 #header{
 	background: #303030;
@@ -54,6 +56,8 @@ html,body{
 
 #nav{
 	background: #575757;
+	width: 100%;
+	overflow: hidden;
     height: 41px;
     border-bottom: 1px solid #212121;
 }
@@ -92,10 +96,17 @@ html,body{
     border-left: 1px solid #303030;
     margin-top: 15px;
 }
+#menu{  
+    width: 14%;  
+    height: 674px;
+    float: left;  
+    overflow: auto;
+    }
 #bar{
     padding-left: 10px;
     height: 34px;
     background: #303030;
+    
 }
 #bar .tab{
     line-height: 33px;
@@ -150,4 +161,11 @@ html,body{
     background-color: #797979;
     text-decoration: none;
     color: #fff;
+}
+/*iframeContent*/
+#iframeContent{
+	width: 86%; 
+    height: 674px; 
+    float: left;
+    overflow:auto ;
 }
