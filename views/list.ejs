@@ -93,7 +93,7 @@
 								<i class="iconfont">&#xe60e;</i>
 							</a>
 							<a href="javascript:;" title="回收站">
-								<i data-name="<%= list[i].goods_name %>" data-id="<%= list[i].goods_id %>" id="del" class="iconfont">&#xe6e8;</i>	
+								<i onclick="del('<%=list[i]._id%>')" class="iconfont">&#xe6e8;</i>	
 							</a>
 						</td>
 					</tr>
@@ -135,25 +135,25 @@
 	}
 	
 	/*点击删除商品行*/
-	$( "#del" ).click( function(){
-		var that = this;
+	function del(gid) {
 		if( !confirm( "您确定要删除此件商品吗?" ) ){
 			return;
 		}
 		$.ajax({
-			type:"post",
-			url:"/api/list",
-			data:{
-				goods_name : $( this ).data( "name" ),
-				goods_id : $( this ).data( "id" )
+			url: "/api/goods_del",
+			type: "get",
+			data: {
+				gid: gid
 			},
-			success:function( res ){
-//					console.log( res );//{ n: 1, ok: 1 }
-				if( res.ok == 1 ){
-					$( that ).parent().parent().parent().remove();
+			success: function(res) {
+				console.log(res);
+				if(res.status == 1) {
+					location.reload(true);
+				} else {
+					alert(res.message);
 				}
 			}
-		});
-	} )
+		})
+	}
 	
 </script>

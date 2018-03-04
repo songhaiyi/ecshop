@@ -44,7 +44,7 @@ h1>.span4>a:hover{
 
 /*商品列表搜索框开始*/
 #form-div{
-	background: #f3f3f3 url(../images/th_bg.gif) repeat-x;
+	background: #f3f3f3;
     border: 1px solid #ddd;
     padding: 5px;
     color: #808080;
@@ -79,7 +79,7 @@ h1>.span4>a:hover{
 }
 #list-div table th{
 	line-height: 39px;
-    background: #f3f3f3 url(../images/th_bg.gif) repeat-x;
+    background: #f3f3f3;
     white-space: nowrap;
     font-weight: normal;
 }
@@ -105,7 +105,7 @@ h1>.span4>a:hover{
 
 /*商品列表底部开始*/
 #footer{
-    background: #f3f3f3 url(../images/th_bg.gif) repeat-x;
+    background: #f3f3f3;
     border: 1px solid #ddd;
     padding: 15px;
     margin: 10px 0;
